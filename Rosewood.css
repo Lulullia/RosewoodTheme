@@ -256,7 +256,7 @@ a:hover.read_more {
 .tippy-box[data-theme~='custom'] {
     background: var(--tooltips);
     color: var(--tooltips-text);
-    border-radius:2px;
+    border-radius: 2px;
     font-family: 'Consolas', monospace;
     text-transform: uppercase;
     text-align: center;
@@ -1399,14 +1399,15 @@ li.reply:before {
     width: 60px;
     border-radius: 50%;
     display: inline-block;
-    margin:0 10px 10px;
+    margin: 0 10px 10px;
 }
 
 .timenote-cont {
     padding-left: 10px;
 }
 
-.timeago, .notecountt {
+.timeago,
+.notecountt {
     text-transform: uppercase;
     font-weight: normal;
     letter-spacing: 1px;
@@ -1415,16 +1416,24 @@ li.reply:before {
 }
 
 .con {
-    margin:0;
-    padding:20px;
+    margin: 0;
+    padding: 20px;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
 }
 
-.giant { width:100%; }
-.big { width:calc(((100% / 3) * 2) - 20px); }
-.medium { width:calc((100% / 3) - 20px); }
+.giant {
+    width: 100%;
+}
+
+.big {
+    width: calc(((100% / 3) * 2) - 20px);
+}
+
+.medium {
+    width: calc((100% / 3) - 20px);
+}
 
 .intromsg {
     text-align: center;
