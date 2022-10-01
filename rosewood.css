@@ -1461,7 +1461,7 @@ li.reply:before {
 
 .intromsg .bx {
     color: var(--accent) !important;
-    fill:var(--accent);
+    fill:var(--accent) !important;
     font-size: 35px !important;
 }
 
