@@ -211,6 +211,28 @@ article, article.layout-three{margin:0 0 3em 0; width:100%;}
 }
 {/block:PermalinkPage}
 
+.pagination { display:flex; justify-content:space-between; margin:60px 0; width:100%; }
+.jump { max-width:90%; }
+.pagination a, .pagination span, .current {
+    display:inline-block;
+    padding:7px;
+    background:var(--accent);
+    color:#fff;
+    border-radius:5px;
+    overflow:hidden;
+    -webkit-transition:all 0.4s ease;
+    -moz-transition:all 0.4s ease; 
+    -o-transition:all 0.4s ease; 
+    -ms-transition:all 0.4s ease; 
+    transition:all 0.4s ease;
+    }
+.jump a, .current { margin:0 7px; }
+.current { background:transparent; color:var(--text); }
+.prev a, .next a { position:absolute; margin:0; z-index:99999; }
+.pagination span { background:transparent; color:var(--text); }
+.pagination a:hover { background:var(--links-hover); color:#fff; }
+
+
 /* Icons are hard-coded into the CSS.
 They use a code that is found in the Boxicons stylesheet at
 https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css
@@ -835,11 +857,13 @@ Search for the wanted icon's name, and copy its code. */
 </div> <!--- GRID --->
 
 {block:Pagination}
-<div class="pgs flex justify">
-<div class="prev">{block:PreviousPage}<a href="{PreviousPage}" class="rounder">Previous</a>{/block:PreviousPage}<span class="rounder">Previous</span></div>
-<div class="next">{block:NextPage}<a href="{NextPage}" class="rounder">Next</a>{/block:NextPage}<span class="rounder">Next</span></div>
+<div class="pagination">
+<div class="prev">{block:PreviousPage}<a href="{PreviousPage}">Previous</a>{/block:PreviousPage}<span>Previous</span></div>
+<div class="jump">{block:JumpPagination length="5"}{block:CurrentPage}<div class="current">{PageNumber}</div>{/block:CurrentPage}{block:JumpPage}<a href="{URL}">{PageNumber}</a>{/block:JumpPage}{/block:JumpPagination}</div>
+<div class="next">{block:NextPage}<a href="{NextPage}">Next</a>{/block:NextPage}<span>Next</span></div>
 </div>
 {/block:Pagination}
+
 </div> <!--- CONTENT --->
 
 </div> <!--- CONTAINER --->
