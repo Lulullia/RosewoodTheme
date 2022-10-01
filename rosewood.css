@@ -1415,6 +1415,14 @@ li.reply:before {
     font-size: 0.8em;
 }
 
+.box {
+    display:inline-block;
+    margin:0 10px 20px;
+    background:var(--content);
+    border-radius:var(--round);
+    overflow:hidden;
+}
+
 .con {
     margin: 0;
     padding: 20px;
@@ -1423,7 +1431,11 @@ li.reply:before {
     transform: translateY(-50%);
 }
 
-.giant {
+.con.one { column-count:1; }
+.con.two { display:grid; grid-template-columns:repeat(2, 1fr); }
+.con.three { display:grid; grid-template-columns:repeat(3, 1fr); }
+
+.giant, .palette {
     width: 100%;
 }
 
@@ -1566,4 +1578,6 @@ li.reply:before {
         z-index: 9999;
         background: var(--posts)
     }
+
+    .medium, .big { width:100%; }
 }

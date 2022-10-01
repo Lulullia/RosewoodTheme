@@ -83,7 +83,7 @@ Credit:
 <link href="https://fonts.googleapis.com/css2?family={text:Body Font}:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
 <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
-<link href="https://raw.githubusercontent.com/Lulullia/RosewoodTheme/main/rosewood.min.css" rel="stylesheet">
+<link href="https://lulullia.github.io/RosewoodTheme/rosewood.min.css" rel="stylesheet">
 
 <style>
 
@@ -451,114 +451,117 @@ Search for the wanted icon's name, and copy its code. */
     {/block:Text}
     
     {block:Link}
-    {block:IndexPage}<div class="small"><span class="bx bx-link-alt"></span></div>{/block:IndexPage}
-    {block:PermalinkPage}
-    <a href="{URL}"><div class="link flex justify">{Name}<span class="bx bx-link-external"></span></div></a>
-    {block:NotReblog}
-    {block:Description}
-    <div class="caption">{Description}</div>
-    {/block:Description}
-    {/block:NotReblog}
-    {block:Rebloggedfrom}
-    <div class="unnest">
-    {block:Reblogs}
-    <div class="reblogged">
-    <div class="username">
-    {block:IsActive}
-    <div class="active">{block:HasPermalink}<a href="{Permalink}">{/block:HasPermalink}<span class="bx bxs-circle"></span> {Username}{block:HasPermalink}</a>{/block:HasPermalink}</div>
-    {/block:IsActive}
-    {block:IsDeactivated}
-    <div class="deleted">{block:HasPermalink}<a href="{Permalink}">{/block:HasPermalink}<span class="bx bxs-circle"></span> {Username}{block:HasPermalink}</a>{/block:HasPermalink}</div>
-    {/block:IsDeactivated}
-    </div>
-    {Body}
-    </div>
-    {/block:Reblogs}
-    </div>
-    {/block:RebloggedFrom}
-    {/block:PermalinkPage}
+        {block:IndexPage}<div class="small"><span class="bx bx-link-alt"></span></div>{/block:IndexPage}
+        {block:PermalinkPage}
+        <a href="{URL}"><div class="link flex justify">{Name}<span class="bx bx-link-external"></span></div></a>
+        {block:NotReblog}
+        {block:Description}
+        <div class="caption">{Description}</div>
+        {/block:Description}
+        {/block:NotReblog}
+        {block:Rebloggedfrom}
+        <div class="unnest">
+        {block:Reblogs}
+        <div class="reblogged">
+        <div class="username">
+        {block:IsActive}
+        <div class="active">{block:HasPermalink}<a href="{Permalink}">{/block:HasPermalink}<span class="bx bxs-circle"></span> {Username}{block:HasPermalink}</a>{/block:HasPermalink}</div>
+        {/block:IsActive}
+        {block:IsDeactivated}
+        <div class="deleted">{block:HasPermalink}<a href="{Permalink}">{/block:HasPermalink}<span class="bx bxs-circle"></span> {Username}{block:HasPermalink}</a>{/block:HasPermalink}</div>
+        {/block:IsDeactivated}
+        </div>
+        {Body}
+        </div>
+        {/block:Reblogs}
+        </div>
+        {/block:RebloggedFrom}
+        {/block:PermalinkPage}
     {/block:Link}
     
     {block:Quote}
-    {block:IndexPage}
-    {block:ifHideQuotePosts}
-    <div class="small"><span class="bx bxs-quote-alt-left"></span></div>
-    {/block:ifHideQuotePosts}
-    {block:ifNotHideQuotePosts}
-    <div class="quote">{Quote} {block:Source}<div class="src">— {Source}</div>{/block:Source}</div>
-    {/block:ifNotHideQuotePosts}
-    {/block:IndexPage}
-    {block:PermalinkPage}
-    <div class="quote">{Quote} {block:Source}<div class="src">— {Source}</div>{/block:Source}</div>
-    {/block:PermalinkPage}
+        {block:IndexPage}
+        {block:ifHideQuotePosts}
+        <div class="small"><span class="bx bxs-quote-alt-left"></span></div>
+        {/block:ifHideQuotePosts}
+        {block:ifNotHideQuotePosts}
+        <div class="quote">{Quote} {block:Source}<div class="src">— {Source}</div>{/block:Source}</div>
+        {/block:ifNotHideQuotePosts}
+        {/block:IndexPage}
+        {block:PermalinkPage}
+        <div class="quote">{Quote} {block:Source}<div class="src">— {Source}</div>{/block:Source}</div>
+        {/block:PermalinkPage}
     {/block:Quote}
     
     {block:Chat}
-    {block:IndexPage}
-    {block:ifHideChatPosts}
-    <div class="small"><span class="bx bx-chat"></span></div>
-    {/block:ifHideChatPosts}
-    {block:ifNotHideChatPosts}
-    {block:Title}<div class="t-title">{Title}</div>{/block:Title}
-    <div class="chat">
-    {block:Lines}
-    <div class="lines">
-    {block:Label}<span class="label">{Label}</span>{/block:Label} {Line}
-    </div>
-    {/block:Lines}
-    </div>
-    {/block:ifNotHideChatPosts}
-    {/block:IndexPage}
-    {block:PermalinkPage}
-    {block:Title}<div class="t-title">{Title}</div>{/block:Title}
-    <div class="chat">
-    {block:Lines}
-    <div class="lines">
-    {block:Label}<span class="label">{Label}</span>{/block:Label} {Line}
-    </div>
-    {/block:Lines}
-    </div>
-    {/block:PermalinkPage}
+        {block:IndexPage}
+        {block:ifHideChatPosts}
+        <div class="small"><span class="bx bx-chat"></span></div>
+        {/block:ifHideChatPosts}
+        {block:ifNotHideChatPosts}
+        {block:Title}<div class="t-title">{Title}</div>{/block:Title}
+        <div class="chat">
+        {block:Lines}
+        <div class="lines">
+        {block:Label}<span class="label">{Label}</span>{/block:Label} {Line}
+        </div>
+        {/block:Lines}
+        </div>
+        {/block:ifNotHideChatPosts}
+        {/block:IndexPage}
+        {block:PermalinkPage}
+        {block:Title}<div class="t-title">{Title}</div>{/block:Title}
+        <div class="chat">
+        {block:Lines}
+        <div class="lines">
+        {block:Label}<span class="label">{Label}</span>{/block:Label} {Line}
+        </div>
+        {/block:Lines}
+        </div>
+        {/block:PermalinkPage}
     {/block:Chat}
     
     {block:Answer}
-    {block:IndexPage}<div class="small"><span class="bx bx-conversation"></span></div>{/block:IndexPage}
-    {block:PermalinkPage}
-    <div class="ask-wrap flex">
-    <div class="q"><span class="bx bx-question-mark"></span></div>
-    <div class="question round"><div class="asker">{Asker} asked</div>{Question}</div>
-    {block:NotReblog}
-    <div class="ans-wrap flex">
-    <div class="answer round"><div class="asker answerer">{Name} answered</div>{Answer}</div>
-    <div class="a"><span class="bx bx-font"></span></div>
-    </div>
-    {/block:NotReblog}
-    {block:Rebloggedfrom}
-    <div class="ans-wrap flex">
-    <div class="answer round">{block:Answerer}<div class="asker answerer">{Answerer} answered</div>{/block:Answerer}{Answer}</div>
-    <div class="a"><span class="bx bx-font"></span></div>
-    </div>
-    <div class="unnest">
-    {block:Reblogs}
-    <div class="reblogged">
-    <div class="username">
-    {block:IsActive}
-    <div class="active">{block:HasPermalink}<a href="{Permalink}">{/block:HasPermalink}<span class="bx bxs-circle"></span> {Username}{block:HasPermalink}</a>{/block:HasPermalink}</div>
-    {/block:IsActive}
-    {block:IsDeactivated}
-    <div class="deleted">{block:HasPermalink}<a href="{Permalink}">{/block:HasPermalink}<span class="bx bxs-circle"></span> {Username}{block:HasPermalink}</a>{/block:HasPermalink}</div>
-    {/block:IsDeactivated}
-    </div>
-    {Body}
-    </div>
-    {/block:Reblogs}
-    </div>
-    {/block:RebloggedFrom}
-    {/block:PermalinkPage}
+        {block:IndexPage}<div class="small"><span class="bx bx-conversation"></span></div>{/block:IndexPage}
+        {block:PermalinkPage}
+        <div class="ask-wrap flex">
+        <div class="q"><span class="bx bx-question-mark"></span></div>
+        <div class="question round"><div class="asker">{Asker} asked</div>{Question}</div>
+        {block:NotReblog}
+        <div class="ans-wrap flex">
+        <div class="answer round"><div class="asker answerer">{Name} answered</div>{Answer}</div>
+        <div class="a"><span class="bx bx-font"></span></div>
+        </div>
+        {/block:NotReblog}
+        {block:Rebloggedfrom}
+        <div class="ans-wrap flex">
+        <div class="answer round">{block:Answerer}<div class="asker answerer">{Answerer} answered</div>{/block:Answerer}{Answer}</div>
+        <div class="a"><span class="bx bx-font"></span></div>
+        </div>
+        <div class="unnest">
+        {block:Reblogs}
+        <div class="reblogged">
+        <div class="username">
+        {block:IsActive}
+        <div class="active">{block:HasPermalink}<a href="{Permalink}">{/block:HasPermalink}<span class="bx bxs-circle"></span> {Username}{block:HasPermalink}</a>{/block:HasPermalink}</div>
+        {/block:IsActive}
+        {block:IsDeactivated}
+        <div class="deleted">{block:HasPermalink}<a href="{Permalink}">{/block:HasPermalink}<span class="bx bxs-circle"></span> {Username}{block:HasPermalink}</a>{/block:HasPermalink}</div>
+        {/block:IsDeactivated}
+        </div>
+        {Body}
+        </div>
+        {/block:Reblogs}
+        </div>
+        {/block:RebloggedFrom}
+        {/block:PermalinkPage}
     {/block:Answer}
     
     {block:Photo}
-    <div class="photo"><a href="#" onclick="Tumblr.Lightbox.init([{ width:{PhotoWidth-HighRes}, height:{PhotoHeight-HighRes}, low_res:'{PhotoURL-500}', high_res:'{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false"><img src="{PhotoURL-HighRes}" alt="{PhotoAlt}"></a></div>
+        <div class="photo">
+        <a href="#" onclick="Tumblr.Lightbox.init([{ width:{PhotoWidth-HighRes}, height:{PhotoHeight-HighRes}, low_res:'{PhotoURL-500}', high_res:'{PhotoURL-HighRes}' }]); $('body').toggleClass('tumblr_lightbox_active'); return false">
+        <img src="{PhotoURL-400}" alt="{PhotoAlt}">
+        </a></div>
     {/block:Photo}
     
     {block:Photoset}

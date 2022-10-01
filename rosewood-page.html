@@ -18,346 +18,144 @@ Notes:
 <html>
 <head>
 
-<title>{Title}</title>
+<title>Page | Lulullia</title>
 <link rel="shortcut icon" href="{Favicon}">
 <link rel="alternate" type="application/rss+xml" href="{RSS}">
+<script src="https://static.tumblr.com/05ejowb/RA6r1jy9i/render.js"></script>
     
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
 <link href="https://fonts.googleapis.com/css?family=Space Mono:700,400&family=Public+Sans:ital,wght@0,400;0,700;1,400;1,700" rel="stylesheet">
+<link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
 <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
-<link href="https://raw.githubusercontent.com/Lulullia/RosewoodTheme/main/rosewood.min.css" rel="stylesheet">
+<link href="https://lulullia.github.io/RosewoodTheme/rosewood.min.css" rel="stylesheet">
 
-<style type="text/css">
+<style>
 
 /* VARIABLES */
 
 :root {
+    --body-font: "Space Mono", monospace;
+    --body-size: 13px;
+    --line-hgt: 1.5em;
+    --rgb-accent: rgb(143, 183, 182);
+
+    --accent: #8fb7b6;
+    --accent-text: #fff;
+    --bg: #f0f0f0;
+    --rgb-bg: rgb(240, 240, 240);
+    --blockquote: #eee;
+    --content: #fafafa;
+    --borders: #dadada;
+    --links: #8fb7b6;
+    --links-hover: #849094;
+    --ask: #eee;
+    --text: #333;
+    --rgb-text: rgb(51, 51, 51);
+    --selection-bg: #e09692;
+    --selection: #fff;
+    --tooltips: #8fb7b6;
+    --tooltips-text: #fff;
+    --hp-bg: var(var(--bg));   
+
+    /* SKILLS PERCENTAGE */
+    --skill-one:7%;
+    --skill-two:23%;
+    --skill-three:13%;
     
-    /* COLORS */
-    --accent:#8fb7b6;
-    --accent-text:#fff;
-    --bg:#f0f0f0;
-    --hp-bg:#eee;
-    --links:#8fb7b6;
-    --links-hover:#849094;
-    --content:#fafafa;
-    --text:#333;
-    --night-bg:#373636;
-    --night-content:#4a4949;
-    --night-borders:#6a6a6a;
-    --night-text:#fff;
-    
-    /* FONT */
-    --font-size:13px;
-    
-    /* STYLING */
-    --round:10px;
-    --rounded:3px; /* This is the round corners for smaller items */
-    
+    /* FAVE COLORS */
+    --color-one:#7eaba6;
+    --color-two:#7e99ab;
+    --color-three:#ab7e99;
 }
 
-/* BASICS */
-
-iframe.tmblr-iframe {
-    z-index:9999999999999!important;
-    top:10px!important;
-    right:0!important;
-    opacity:1!important;
-    transform:scale(0.75);
-    transform-origin:100% 0;
-    -webkit-transform:scale(0.75);
-    -webkit-transform-origin:100% 0;
-    -o-transform:scale(0.75);
-    -o-transform-origin:100% 0;
-    -moz-transform:scale(0.75);
-    -moz-transform-origin:100% 0;
-    -ms-transform:scale(0.75);
-    -ms-transform-origin:100% 0;
-    }
-
-body {
-    margin:0;
-    background:var(--bg);
-    color:var(--text);
-    font-family:'Space Mono',sans-serif;
-    font-size:var(--font-size);
+[data-theme="daynight"] {
+    --bg: #373636;
+    --rgb-bg: rgb(55, 54, 54);
+    --blockquote: #222;
+    --content:#4a4949;
+    --borders: #6a6a6a;
+    --menu: #4a4949;
+    --menu-text: #fff;
+    --ask: #222;
+    --text: #fff;
+    --rgb-text: rgb(255, 255, 255);
 }
 
-a {
-    color:var(--links);
-    text-decoration:none;
-    -webkit-transition:all 0.4s ease;
-    -moz-transition:all 0.4s ease;
-    -o-transition:all 0.4s ease;
-    -ms-transition:all 0.4s ease;
-    transition:all 0.4s ease;
-    }
-    
-a:hover { color:var(--links-hover)!important; }
+.tmblr-iframe { filter:invert(1); -webkit-filter:invert(1); -o-filter:invert(1); -moz-filter:invert(1); -ms-filter:invert(1); }
+[data-theme="daynight"] .tmblr-iframe { filter:invert(0); -webkit-filter:invert(0); -o-filter:invert(0); -moz-filter:invert(0); -ms-filter:invert(0); }
 
-u { text-decoration:underline; }
+.round { border-radius:10px; }
+.rounder { border-radius:5px; }
 
-b, strong { font-weight:bold; }
+p:last-of-type { margin:10px 0; }
 
-p { margin:10px 0; }
+.detail p { margin:0 0 15px 0; }
+.detail p:last-of-type { margin:0; }
+.detail span { margin:0 7px 0 0; text-transform:capitalize; padding:3px 6px; background:var(--accent); color:var(--accent-text); font-size:var(--font-size); }
 
-pre {
-    margin:5px 0;
-    padding:2px 5px;
-    border-radius:4px;
-    white-space:pre-wrap;
-    word-wrap:break-word;
-    }
+.stats h3, .currently h3 { margin:0 0 0.5em; font-size:var(--font-size); font-weight:normal; }
+.hp { width:100%; background:var(--hp-bg); margin:0 0 0 -5px; height:10px; box-sizing:border-box; overflow:hidden; }
+.bar { background:var(--accent); height:10px; padding:0 5px; }
+.bar.one { width:var(--skill-one); }
+.bar.two { width:var(--skill-two); }
+.bar.three { width:var(--skill-three); }
 
-ul { margin:0 0 0 -0.5em; list-style:none; }
-ul li { margin:5px 0; }
-ul li:before { font-family:"Boxicons"; font-size:7px; margin:0 1.5em 0 -2.5em; width:2.5em; }
+.currently table, .pref table, .social table { border-spacing:0 10px; }
+.currently td:first-of-type .bx, .pref td:first-of-type .bx { margin:0 10px 0 0; vertical-align:middle; color:var(--accent); font-size:20px; }
 
-hr { width:25%; margin:10px auto; }
+.palette { text-align:center; }
+.color { width:40px; height:40px; border-radius:100%; vertical-align:middle; }
+.color.one { background:var(--color-one); }
+.color.two { background:var(--color-two); }
+.color.three { background:var(--color-three); }
 
-.flex { display:flex; flex-wrap:wrap; }
-.justify { justify-content:space-between; }
-.center { text-align:center; }
-
-body::-webkit-scrollbar { width:18px; background:var(--bg);  }
-body::-webkit-scrollbar-thumb { background:var(--accent); border:6px solid var(--bg); border-radius:10px; }
-
-::selection { background:var(--accent); color:var(--accent-text); }
-::-moz-selection { background:var(--accent); color:var(--accent-text); }
-::-webkit-selection { background:var(--accent); color:var(--accent-text); }
-
-.tippy-box[data-theme~='custom'] {
+.social a { color:var(--text); }
+.social .bx { 
+    margin:0 7px 0 0;
+    vertical-align:middle;
+    padding:7px;
     background:var(--accent);
     color:var(--accent-text);
-    border-radius:var(--rounded);
-    font-family: 'Public Sans', sans-serif;
-    text-transform: uppercase;
-    text-align: center;
-    font-weight: normal;
-    letter-spacing: 1px;
-    font-style: normal;
-    font-size: 0.9em;
+    font-size:20px;
 }
 
-/* SIDEBAR */
-
-.sidebar { position:fixed; margin:0; width:12vw; }
-.side { padding:0; text-align:right; }
-.side img { margin:0 10px 10px; width:60px; height:60px; border-radius:100%; }
-
-nav { margin:0; }
-nav ul { margin:0; list-style-type:none; }
-nav ul li { margin:10px 0; }
-nav ul li:before { display:none; }
-
-nav a, .menu {
-    cursor:pointer;
-    padding:0 10px;
-    text-transform:uppercase;
-    font-size:11px;
-    letter-spacing:0.5px;
-    color:var(--text);
-    border-right:3px solid transparent;
-    -webkit-transition:all 0.4s ease;
-    -moz-transition:all 0.4s ease;
-    -o-transition:all 0.4s ease;
-    -ms-transition:all 0.4s ease;
-    transition:all 0.4s ease;
-    }
-
-.m-side, .navi, .gate, .m-thm { display:none; }
-
-.m-links { margin:0; padding:15px 15px 5px; background:var(--content); border-radius:var(--rounded); }
-.m-links a { display:inline-block; margin:0 7px; padding:0 0 10px; text-transform:uppercase; color:var(--text); font-size:11px; letter-spacing:0.5px; }
-
-/* CONTAINER */
-
-.container { margin:100px auto; width:75vw; }
-.content { margin:0 0 0 14vw; width:75%; }
-
-.box { display:inline-block; margin:0 10px 20px; background:var(--content); border-radius:var(--round); overflow:hidden; }
-
-.giant, .palette { width:100%; }
-.big { width:calc(((100% / 3) * 2) - 20px); }
-.small { width:calc((100% / 3) - 20px); }
-
-.con { align-self:center; margin:0; padding:10px 20px 20px; }
-
-.con.one { column-count:1; }
-.con.two { display:grid; grid-template-columns:repeat(2, 1fr); }
-.con.three { display:grid; grid-template-columns:repeat(3, 1fr); }
+.quote { font-family:georgia, sans-serif; font-size:25px; line-height:1.3em; }
+.quote .bx { margin:0 10px; vertical-align:top; color:var(--accent)!important; }
+.src { text-align:right; }
 
 h3 { padding:20px 20px 0; margin:0; }
 
-.tags a { display:inline-block; line-height:2em; margin:5px 2px; padding:2px 6px; background:var(--accent); color:var(--accent-text)!important; border-radius:var(--rounded); }
+.tags a { display:inline-block; line-height:2em; margin:5px 2px; padding:2px 6px; background:var(--accent); color:var(--accent-text)!important; }
 .tags a:hover { background:var(--links-hover); }
 
 .links h3 { padding:20px 30px 0; }
 .links a { padding:10px; display:block; text-transform:capitalize; text-align:left; color:var(--text); }
 .links a:hover { background:var(--accent); color:var(--accent-text)!important; }
 
-/* CREDIT & TABS */
-
-.thm { position:fixed; bottom:15px; right:15px; z-index:999;  }
-
-.tab { position:fixed; top:15px; left:15px; width:30px; z-index:999; }
-
-.tab .bx, .m-side .bx {
-    font-size:18px;
-    vertical-align:middle;
-    display:inline-block;
-    width:auto;
-    text-align:center;
-    padding:10px;
-    background:var(--accent);
-    color:var(--accent-text);
-    border-radius:100%;
-    z-index:999;
-    -webkit-transition:all 0.4s ease;
-    -moz-transition:all 0.4s ease;
-    -o-transition:all 0.4s ease;
-    -ms-transition:all 0.4s ease;
-    transition:all 0.4s ease;
-    }
-    
-.tab .bx { margin:0 0 10px; }
-
-.m-side .bx { margin:0 5px 10px; }
-
-.thm .bx {
-    font-size:18px;
-    padding:0;
-    background:transparent;
-    color:var(--accent)!important;
-}
-
-.tab .bx:hover, .m-side .bx:hover {
-    background:var(--links-hover);
-    cursor:pointer;
-}
-
-#avatar-circle {
-    background-color: var(--accent);
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    display: inline-block;
-    margin:0 10px 10px;
-}
-
-.intromsg {
-    text-align: center;
-    background: var(--background) !important;
-    margin-bottom: 0px;
-    font-size: 15px;
-}
-
-.intromsg .con {
-    padding-top: 0px;
-    padding-bottom: 10px;
-}
-
-.intromsg .bx {
-    fill: var(--accent) !important;
-}
-
-/* DAYNIGHT */ 
-
-body.night { 
-    background:var(--night-bg);!important; 
-    color:var(--night-text);!important; 
-    -webkit-transition:all 0s ease;
-    -moz-transition:all 0s ease;
-    -o-transition:all 0s ease;
-    -ms-transition:all 0s ease;
-    transition:all 0s ease;
-    }
-
-body.night::-webkit-scrollbar, body.night::-webkit-scrollbar-thumb { border:6px solid var(--night-bg); }
-body.night::-webkit-scrollbar, body.night .intromsg { background:var(--night-bg); }
-body.night a, body.night .bx { color:var(--night-text); }
-body.night .box, body.night .m-links { background:var(--night-content); }
-
-/* MEDIA QUERIES */
-
 @media only screen and (max-width:999px) {
-iframe.tmblr-iframe { display:none; }
-.container { width:95%; margin:100px auto; } 
-.sidebar, .tab { display:none; }
-.m-side { display:inline-block; position:relative; margin:50px 0 0; display:inline-block; width:100%; text-align:center; }
-.m-side, .navi, .m-thm { display:inline-block; margin:0; }
-.gate { position:absolute; width:60%; margin:0 0 0 20%; z-index:9999; }
-.content { margin:70px auto; width:100%; }
-.small, .big { width:100%; }
-.thm { display:none; }
+.detail .con { display:grid; grid-template-columns:repeat(2, 1fr); }
+.detail span:after { content:":"; }
 }
 
 </style>
 </head>
 
-<!----------------------------------------------------- SCRIPTS ------->
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
-<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
-<script src="https://static.tumblr.com/05ejowb/9zqqo58ev/night.min.js"></script>
-
-<script>
-$(document).ready(function(){
-    //remove tumblr redirects script by magnusthemes@tumblr
-    $('a[href*="t.umblr.com/redirect"]').each(function(){
-        var originalURL = $(this).attr("href").split("?z=")[1].split("&t=")[0];
-        var replaceURL = decodeURIComponent(originalURL);
-        $(this).attr("href", replaceURL);
-    });
-    tippy("[title]", {
-        theme:"custom",
-        duration:300,
-        allowHTML:true,
-        arrow:false,
-        followCursor:true,
-        inlinePositioning:true,
-        placement:"auto",
-        zIndex:9999999,
-        content(reference) {
-            const title = reference.getAttribute("title");
-            reference.removeAttribute("title");
-            return title;
-        },
-    });
-    $(".menu").click(function(){
-        $(".lists").slideToggle(500);
-        $(".close",this).toggle();
-    });
-    $(".navi").click(function(){
-        $(".gate").slideToggle(500);
-        $(".close",this).toggle();
-    });
-    
-});
-</script>
-
 <body>
 
 <div class="container">
 
+<a class="t-ctrls"><span class="hide"><i class="bx bxs-cog"></i></span><span class="hide" style="display:none;"><i class="bx bx-x"></i></span></a>
+
 <div class="tab">
-<a class="luna" title="Night"><span class="bx bxs-moon"></span></a>
-<a class="solis" style="display:none;" title="Day"><span class="bx bxs-sun"></span></a>
-</div> <!--- TAB --->
+    <label class="dn"><input class="modus" type="checkbox">
+        <a class="diemnox moon" title="Night"><i class="bx bxs-moon"></i></a>
+        <a class="diemnox none" title="Day"><i class="bx bxs-sun"></i></a>
+    </label>
 
-
-<!--- MOBILE NAVIGATION --->
-<div class="m-side">
-
-    <a class="luna" title="Night"><span class="bx bxs-moon"></span></a>
-    <a class="solis" style="display:none;" title="Day"><span class="bx bxs-sun"></span></a>
-    
     <a class="navi"><span class="close"><i class="bx bx-menu"></i></span><span class="close" style="display:none;"><i class="bx bx-x"></i></span></a>
-    
     <div class="m-thm"><a href="https://ricecodes.tumblr.com/" title="Page by Ricecodes"><span class="bx bxs-star"></span></a></div>
-    
+
     <div class="gate">
     <div class="m-links">
         <a href="/">return</a>
@@ -365,8 +163,7 @@ $(document).ready(function(){
         <a href="/archive">archive</a>
     </div>
     </div>
-
-</div> <!--- END OF MOBILE NAVIGATION --->
+</div> <!--- END OF TAB --->
 
 <div class="sidebar">
 <div class="side">
@@ -401,18 +198,204 @@ $(document).ready(function(){
 
     <div class="intromsg giant box">
         <div class="con">
-
             <svg class="bx" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32 32">
-                
             </svg>
-        
             <p>Page introduction.</p>
         </div>
    </div>
-    
+
+<!--- 
+
+You can add more boxes by copying and pasting this:
+
+For tags:
+<div class="tags small box">
+    <div class="con">
+        <h3></h3> (header)
+        <a href="URL HERE" class="rounder">Tag</a>
+    </div>
+</div>
+
+For links:
+<div class="links big box">
+    <div class="con">
+        <h3></h3> (header)
+        <a href="URL HERE">Link</a>
+    </div>
+</div>
+
+Details:
+<div class="detail small box">
+    <div class="con">
+        <p><span class="rounder">Detail Name</span> Detail</p>
+        <p><span class="rounder">Detail Name</span> Detail</p>
+        <p><span class="rounder">Detail Name</span> Detail</p>
+    </div>
+</div>
+
+About me:
+<div class="big box">
+    <div class="con">
+        Lorem ipsum
+        <p>Lorem ipsum</p>
+    </div>
+</div>
+
+Skills bar:
+<div class="stats small box">
+    <div class="con">
+
+        <p><h3>Skill #1</h3>
+        <div class="hp rounder"><div class="bar one"></div></div></p>
+
+        <p><h3>Skill #2</h3>
+        <div class="hp rounder"><div class="bar two"></div></div></p>
+
+        <p><h3>SKill #3</h3>
+        <div class="hp rounder"><div class="bar three"></div></div></p>
+        
+    </div>
+</div>
+Remember to change the percentage where the variables are.
+
+Likes & dislikes:
+<div class="pref small box">
+<div class="con">
+    <table>
+    <tr>
+        <td><span class="bx bxs-like"></span></td>
+        <td>
+        like, like, like
+        </td>
+    </tr>
+    <tr>
+        <td><span class="bx bxs-dislike"></span></td>
+        <td>
+        dislike, dislike, dislike
+        </td>
+    </tr>
+    <tr></tr>
+    </table>
+
+FAVORITE COLORS:
+    <div class="palette flex justify">
+        <div class="color one"></div>
+        <div class="color two"></div>
+        <div class="color three"></div>
+    </div>
+</div>
+</div>
+Remember to change the colors where the variables are.
+
+Socials:
+<div class="social small box">
+<div class="con">
+    <table>
+        <tr>
+            <td><span class="bx bxl-tumblr rounder"></span></td>
+            <td><a href="URL HERE">@username/handle</a></td>
+        </tr>
+
+        <tr>
+            <td><span class="bx bxl-tumblr rounder"></span></td>
+            <td><a href="URL HERE">@username/handle</a></td>
+        </tr>
+    </table>
+</div>
+</div>
+
+Quote:
+<div class="big box">
+<div class="con">
+    <div class="quote">
+        <span class="bx bxs-quote-alt-left"></span>
+        Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        <span class="bx bxs-quote-alt-right"></span>
+    </div>
+    <div class="src">— Source if your quote has one</div>
+</div>
+</div>
+
+Currently:
+<div class="currently small box">
+<div class="con">
+    <table>
+        <tr>
+            <td><span class="bx bx-tv"></span></td>
+            <td>Currently watching</td>
+        </tr>
+
+        <tr>
+            <td><span class="bx bxs-book"></span></td>
+            <td>Currently reading</td>
+        </tr>
+
+        <tr>
+            <td><span class="bx bxs-music"></span></td>
+            <td>Currently listening to</td>
+        </tr>
+
+        <tr>
+            <td><span class="bx bxs-pencil"></span></td>
+            <td>Currently working on</td>
+        </tr>
+    </table>
+</div>
+</div>
+
+Options:
+box: small, big, giant
+con: one, two, three (columns)
+
+--->
 </div> <!--- CONTENT --->
 <div class="thm"><a href="https://ricecodes.tumblr.com/" title="Page by Ricecodes"><span class="bx bxs-star"></span></a></div>
 </div> <!--- CONTAINER --->
+
+<!----------------------------------------------------- SCRIPTS ------->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+<script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+<script>
+$(document).ready(function(){
+    //remove tumblr redirects script by magnusthemes@tumblr
+    $('a[href*="t.umblr.com/redirect"]').each(function(){
+        var originalURL = $(this).attr("href").split("?z=")[1].split("&t=")[0];
+        var replaceURL = decodeURIComponent(originalURL);
+        $(this).attr("href", replaceURL);
+    });
+    tippy("[title]", {
+        theme:"custom",
+        duration:300,
+        allowHTML:true,
+        arrow:false,
+        followCursor:true,
+        inlinePositioning:true,
+        placement:"auto",
+        zIndex:9999999,
+        content(reference) {
+            const title = reference.getAttribute("title");
+            reference.removeAttribute("title");
+            return title;
+        },
+    });
+    $(".t-ctrls").click(function(){
+        $("body").toggleClass("open");
+        $(".hide",this).toggle();
+    });
+    $(".menu").click(function(){
+        $(".lists").slideToggle(500);
+        $(".close",this).toggle();
+    });
+    $(".navi").click(function(){
+        $(".gate").slideToggle(500);
+        $(".close",this).toggle();
+    });
+});
+</script>
+<script src="https://static.tumblr.com/05ejowb/5yUr1k551/mode.min.js"></script>
 
 </body>
 </html>
