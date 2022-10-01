@@ -318,7 +318,6 @@ a.read_more,
 .permalink,
 .controls .bx,
 .exit .bx,
-.pgs a,
 .load .bx,
 .credit .bx {
     -webkit-transition: all 0.4s ease;
@@ -1335,37 +1334,9 @@ li.reply:before {
     content: "\ee32"
 }
 
-.pgs {
-    margin: 50px 0 0;
-    width: calc(100% - 4em)
-}
-
-.container.layout-three .pgs,
+.container.layout-three .pagination,
 .container.layout-three .load-more {
     width: calc(100% - 3em)
-}
-
-.pgs a,
-.pgs span {
-    display: inline-block;
-    padding: 7px;
-    color: var(--accent-text);
-    overflow: hidden
-}
-
-.pgs a {
-    position: absolute;
-    margin: 0;
-    background: var(--accent);
-    z-index: 9999
-}
-
-.pgs span {
-    color: rgba(var(--rgb-text), .5)
-}
-
-.pgs a:hover {
-    background: var(--links-hover)
 }
 
 .load-status {
@@ -1609,7 +1580,7 @@ li.reply:before {
         background: transparent
     }
 
-    .pgs {
+    .pagination {
         margin: 60px auto;
         width: 95%
     }
