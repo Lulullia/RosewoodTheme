@@ -1449,7 +1449,7 @@ li.reply:before {
 
 .intromsg {
     text-align: center;
-    background: var(--background);
+    background: var(--background) !important;
     margin-bottom: 0px;
     font-size: 15px;
 }
