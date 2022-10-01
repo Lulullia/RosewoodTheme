@@ -1496,13 +1496,13 @@ li.reply:before {
 
     .container,
     .container.layout-three {
-        margin: 0;
-        width: 100%
+        margin: 0 auto;
+        width: 95%
     }
 
     .content {
-        margin: 70px auto;
-        width: 95%
+        margin: 45px auto;
+        width: 100%
     }
 
     article,

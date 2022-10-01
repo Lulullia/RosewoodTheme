@@ -57,8 +57,7 @@ Notes:
     --selection-bg: #e09692;
     --selection: #fff;
     --tooltips: #8fb7b6;
-    --tooltips-text: #fff;
-    --hp-bg: var(var(--bg));   
+    --tooltips-text: #fff; 
 
     /* SKILLS PERCENTAGE */
     --skill-one:30%;
@@ -73,7 +72,7 @@ Notes:
 
     /* ROUNDING */
     --round: 10px;
-    --rounded: 5px;
+    --rounded: 3px;
 }
 
 [data-theme="daynight"] {
@@ -96,7 +95,9 @@ Notes:
 p:last-of-type { margin:10px 0; }
 
 .round { border-radius:10px; }
-.rounder { border-radius:5px; }
+.rounder { border-radius:3px; }
+
+h3 { padding:20px 20px 0; margin:0; }
 
 .detail p { margin:0 0 15px 0; }
 .detail p:last-of-type { margin:0; }
@@ -115,8 +116,8 @@ p:last-of-type { margin:10px 0; }
     border-radius:var(--rounded);
 }
 
-.stats h3, .currently h3 { margin:0 0 0.5em; font-size:var(--font-size); font-weight:normal; }
-.hp { width:100%; background:var(--hp-bg); border-radius:var(--rounded); margin:0 0 0 -5px; height:10px; box-sizing:border-box; overflow:hidden; }
+.stats h3, .currently h3 { margin:0 0 0.5em; font-size:var(--font-size); font-weight:normal; padding:0; }
+.hp { width:100%; background:var(--bg); border-radius:var(--rounded); margin:0 0 0 -5px; height:10px; box-sizing:border-box; overflow:hidden; }
 .bar { background:var(--accent); height:10px; padding:0 5px; }
 .bar.one { width:var(--skill-one); }
 .bar.two { width:var(--skill-two); }
@@ -151,8 +152,6 @@ p:last-of-type { margin:10px 0; }
 .quote .bx { margin:0 10px; vertical-align:top; color:var(--accent)!important; }
 .src { text-align:right; }
 
-h3 { padding:20px 20px 0; margin:0; }
-
 .tags a { display:inline-block; line-height:2em; margin:5px 2px; padding:2px 6px; background:var(--accent); color:var(--accent-text)!important; border-radius:var(--rounded); }
 .tags a:hover { background:var(--links-hover); }
 
@@ -171,14 +170,11 @@ h3 { padding:20px 20px 0; margin:0; }
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 15px;
+    padding: 5px 0px;
 }
 .cta a:hover {
     background-color: var(--links-hover) !important;
     color: var(--accent-text) !important;
-}
-
-@media only screen and (max-width:999px) {
-.detail .con { display:grid; grid-template-columns:repeat(2, 1fr); }
 }
 
 </style>
