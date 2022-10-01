@@ -46,6 +46,7 @@ Notes:
     --rgb-bg: rgb(240, 240, 240);
     --blockquote: #eee;
     --content: #fafafa;
+    --posts: #fafafa;
     --borders: #dadada;
     --links: #8fb7b6;
     --links-hover: #849094;
@@ -59,14 +60,19 @@ Notes:
     --hp-bg: var(var(--bg));   
 
     /* SKILLS PERCENTAGE */
-    --skill-one:7%;
-    --skill-two:23%;
-    --skill-three:13%;
+    --skill-one:30%;
+    --skill-two:35%;
+    --skill-three:35%;
+    --skill-four:85%;
     
     /* FAVE COLORS */
     --color-one:#7eaba6;
     --color-two:#7e99ab;
     --color-three:#ab7e99;
+
+    /* ROUNDING */
+    --round: 10px;
+    --rounded: 5px;
 }
 
 [data-theme="daynight"] {
@@ -74,6 +80,7 @@ Notes:
     --rgb-bg: rgb(55, 54, 54);
     --blockquote: #222;
     --content:#4a4949;
+    --posts: #4a4949;
     --borders: #6a6a6a;
     --menu: #4a4949;
     --menu-text: #fff;
@@ -85,21 +92,35 @@ Notes:
 .tmblr-iframe { filter:invert(1); -webkit-filter:invert(1); -o-filter:invert(1); -moz-filter:invert(1); -ms-filter:invert(1); }
 [data-theme="daynight"] .tmblr-iframe { filter:invert(0); -webkit-filter:invert(0); -o-filter:invert(0); -moz-filter:invert(0); -ms-filter:invert(0); }
 
+p:last-of-type { margin:10px 0; }
+
 .round { border-radius:10px; }
 .rounder { border-radius:5px; }
 
-p:last-of-type { margin:10px 0; }
-
 .detail p { margin:0 0 15px 0; }
 .detail p:last-of-type { margin:0; }
-.detail span { margin:0 7px 0 0; text-transform:capitalize; padding:3px 6px; background:var(--accent); color:var(--accent-text); font-size:var(--font-size); }
+
+.detail .con {
+    justify-content: center;
+    align-content: space-between;
+}
+
+.detail span, .cta a {
+    margin:4px 4px;
+    padding:3px 6px;
+    background:var(--accent);
+    color:var(--accent-text);
+    font-size:var(--font-size);
+    border-radius:var(--rounded);
+}
 
 .stats h3, .currently h3 { margin:0 0 0.5em; font-size:var(--font-size); font-weight:normal; }
-.hp { width:100%; background:var(--hp-bg); margin:0 0 0 -5px; height:10px; box-sizing:border-box; overflow:hidden; }
+.hp { width:100%; background:var(--hp-bg); border-radius:var(--rounded); margin:0 0 0 -5px; height:10px; box-sizing:border-box; overflow:hidden; }
 .bar { background:var(--accent); height:10px; padding:0 5px; }
 .bar.one { width:var(--skill-one); }
 .bar.two { width:var(--skill-two); }
 .bar.three { width:var(--skill-three); }
+.bar.four { width:var(--skill-four); }
 
 .currently table, .pref table, .social table { border-spacing:0 10px; }
 .currently td:first-of-type .bx, .pref td:first-of-type .bx { margin:0 10px 0 0; vertical-align:middle; color:var(--accent); font-size:20px; }
@@ -117,25 +138,46 @@ p:last-of-type { margin:10px 0; }
     padding:7px;
     background:var(--accent);
     color:var(--accent-text);
-    font-size:20px;
+    fill: var(--accent-text);
+    font-size:20px; 
+    border-radius:var(--rounded);
 }
 
-.quote { font-family:georgia, sans-serif; font-size:25px; line-height:1.3em; }
+.quote {
+    font-family: 'Mate SC', serif;
+    font-size:25px;
+    line-height:1.3em;}
 .quote .bx { margin:0 10px; vertical-align:top; color:var(--accent)!important; }
 .src { text-align:right; }
 
 h3 { padding:20px 20px 0; margin:0; }
 
-.tags a { display:inline-block; line-height:2em; margin:5px 2px; padding:2px 6px; background:var(--accent); color:var(--accent-text)!important; }
+.tags a { display:inline-block; line-height:2em; margin:5px 2px; padding:2px 6px; background:var(--accent); color:var(--accent-text)!important; border-radius:var(--rounded); }
 .tags a:hover { background:var(--links-hover); }
 
 .links h3 { padding:20px 30px 0; }
 .links a { padding:10px; display:block; text-transform:capitalize; text-align:left; color:var(--text); }
 .links a:hover { background:var(--accent); color:var(--accent-text)!important; }
 
+.cta .con {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: space-around;
+}
+.cta a {
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.cta a:hover {
+    background-color: var(--links-hover) !important;
+    color: var(--accent-text) !important;
+}
+
 @media only screen and (max-width:999px) {
 .detail .con { display:grid; grid-template-columns:repeat(2, 1fr); }
-.detail span:after { content:":"; }
 }
 
 </style>
@@ -143,27 +185,38 @@ h3 { padding:20px 20px 0; margin:0; }
 
 <body>
 
-<div class="container">
-
-<a class="t-ctrls"><span class="hide"><i class="bx bxs-cog"></i></span><span class="hide" style="display:none;"><i class="bx bx-x"></i></span></a>
-
-<div class="tab">
+<div class="tab"> <!--- TAB START --->
     <label class="dn"><input class="modus" type="checkbox">
         <a class="diemnox moon" title="Night"><i class="bx bxs-moon"></i></a>
         <a class="diemnox none" title="Day"><i class="bx bxs-sun"></i></a>
     </label>
-
-    <a class="navi"><span class="close"><i class="bx bx-menu"></i></span><span class="close" style="display:none;"><i class="bx bx-x"></i></span></a>
-    <div class="m-thm"><a href="https://ricecodes.tumblr.com/" title="Page by Ricecodes"><span class="bx bxs-star"></span></a></div>
-
-    <div class="gate">
-    <div class="m-links">
-        <a href="/">return</a>
-        <a href="/about">about</a>
-        <a href="/archive">archive</a>
+    
+    <!--- START OF MOBILE NAVIGATION --->
+    <a class="m-nav"><span class="close"><i class="bx bx-menu"></i></span><span class="close none"><i class="bx bx-x"></i></span></a>
+    <div class="gate round">
+        <div class="m-links">
+            <a href="/">home</a>
+            
+            <a href="/about">about</a>
+            
+            <a href="/nav">navigation</a>
+            
+            <!--- here add links like Portfolio?
+            <a href="/">Link 1</a>
+            
+            <a href="/">Link 2</a> -->
+            
+            <a href="/archive">archive</a>
+        </div>
     </div>
-    </div>
-</div> <!--- END OF TAB --->
+    <!--- END OF MOBILE NAVIGATION --->
+
+    <a class="m-thm" href="https://ricecodes.tumblr.com/" target="_blank"><span class="bx bxs-star"></span></a>
+</div> <!--- TAB --->
+    
+<a class="t-ctrls"><span class="hide"><i class="bx bxs-cog"></i></span><span class="hide" style="display:none;"><i class="bx bx-x"></i></span></a>
+
+<div class="container">
 
 <div class="sidebar">
 <div class="side">
@@ -178,10 +231,6 @@ h3 { padding:20px 20px 0; margin:0; }
         
         <li><a href="/nav">navigation</a></li>
         
-        {block:AskEnabled}
-            <li><a href="/ask">message</a></li>
-        {/block:AskEnabled}
-        
         <li><a href="/archive">archive</a></li>
         
         <!--- here add links like Portfolio? or keep these in Navigation?
@@ -192,7 +241,7 @@ h3 { padding:20px 20px 0; margin:0; }
         </ul>
     </nav>
 </div>
-</div> <!--- END OF SIDEBAR --->
+</div> <!--- SIDEBAR --->
 
 <div class="content flex justify">
 
@@ -212,7 +261,7 @@ For tags:
 <div class="tags small box">
     <div class="con">
         <h3></h3> (header)
-        <a href="URL HERE" class="rounder">Tag</a>
+        <a href="URL HERE">Tag</a>
     </div>
 </div>
 
@@ -227,9 +276,9 @@ For links:
 Details:
 <div class="detail small box">
     <div class="con">
-        <p><span class="rounder">Detail Name</span> Detail</p>
-        <p><span class="rounder">Detail Name</span> Detail</p>
-        <p><span class="rounder">Detail Name</span> Detail</p>
+        <p><span class="rounded">Detail Name</span> Detail</p>
+        <p><span class="rounded">Detail Name</span> Detail</p>
+        <p><span class="rounded">Detail Name</span> Detail</p>
     </div>
 </div>
 
@@ -246,17 +295,25 @@ Skills bar:
     <div class="con">
 
         <p><h3>Skill #1</h3>
-        <div class="hp rounder"><div class="bar one"></div></div></p>
+        <div class="hp"><div class="bar one"></div></div></p>
 
         <p><h3>Skill #2</h3>
-        <div class="hp rounder"><div class="bar two"></div></div></p>
+        <div class="hp"><div class="bar two"></div></div></p>
 
         <p><h3>SKill #3</h3>
-        <div class="hp rounder"><div class="bar three"></div></div></p>
+        <div class="hp"><div class="bar three"></div></div></p>
         
     </div>
 </div>
 Remember to change the percentage where the variables are.
+
+Button:
+<div class="cta medium box">
+<div class="con">
+    <a href="#">Button</a>
+    <div class="src">— Txt</div>
+</div>
+</div>
 
 Likes & dislikes:
 <div class="pref small box">
@@ -292,12 +349,12 @@ Socials:
 <div class="con">
     <table>
         <tr>
-            <td><span class="bx bxl-tumblr rounder"></span></td>
+            <td><span class="bx bxl-tumblr"></span></td>
             <td><a href="URL HERE">@username/handle</a></td>
         </tr>
 
         <tr>
-            <td><span class="bx bxl-tumblr rounder"></span></td>
+            <td><span class="bx bxl-tumblr"></span></td>
             <td><a href="URL HERE">@username/handle</a></td>
         </tr>
     </table>
@@ -349,14 +406,20 @@ con: one, two, three (columns)
 
 --->
 </div> <!--- CONTENT --->
-<div class="thm"><a href="https://ricecodes.tumblr.com/" title="Page by Ricecodes"><span class="bx bxs-star"></span></a></div>
 </div> <!--- CONTAINER --->
 
-<!----------------------------------------------------- SCRIPTS ------->
+<div class="credit">
+    <a class="scroll" title="Back to top"><span class="bx bx-up-arrow-alt"></span></a>
+    <a class="thm" href="https://ricecodes.tumblr.com/" title="Theme by ricecodes" target="_blank"><span class="bx bxs-star"></span></a>
+</div>    
 
+<!----------------------------------------------------- SCRIPTS ------->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
 <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+<script src="https://static.tumblr.com/05ejowb/cxAqpcpux/load.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/annasthms/customaudio@latest/customaudio.min.js"></script>
+<script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 
 <script>
 $(document).ready(function(){
@@ -366,35 +429,9 @@ $(document).ready(function(){
         var replaceURL = decodeURIComponent(originalURL);
         $(this).attr("href", replaceURL);
     });
-    tippy("[title]", {
-        theme:"custom",
-        duration:300,
-        allowHTML:true,
-        arrow:false,
-        followCursor:true,
-        inlinePositioning:true,
-        placement:"auto",
-        zIndex:9999999,
-        content(reference) {
-            const title = reference.getAttribute("title");
-            reference.removeAttribute("title");
-            return title;
-        },
-    });
-    $(".t-ctrls").click(function(){
-        $("body").toggleClass("open");
-        $(".hide",this).toggle();
-    });
-    $(".menu").click(function(){
-        $(".lists").slideToggle(500);
-        $(".close",this).toggle();
-    });
-    $(".navi").click(function(){
-        $(".gate").slideToggle(500);
-        $(".close",this).toggle();
-    });
 });
 </script>
+<script src="https://static.tumblr.com/05ejowb/59hr5s287/rosewood.min.js"></script>
 <script src="https://static.tumblr.com/05ejowb/5yUr1k551/mode.min.js"></script>
 
 </body>
