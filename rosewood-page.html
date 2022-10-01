@@ -30,63 +30,19 @@ Notes:
 <link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
 <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
 <link href="https://lulullia.github.io/RosewoodTheme/rosewood.min.css" rel="stylesheet">
-
 <style>
 
-/* VARIABLES */
-
 :root {
-    --body-font: "Space Mono", monospace;
-    --body-size: 13px;
-    --line-hgt: 1.5em;
-    --rgb-accent: rgb(143, 183, 182);
-
-    --accent: #8fb7b6;
-    --accent-text: #fff;
-    --bg: #f0f0f0;
-    --rgb-bg: rgb(240, 240, 240);
-    --blockquote: #eee;
-    --content: #fafafa;
-    --posts: #fafafa;
-    --borders: #dadada;
-    --links: #8fb7b6;
-    --links-hover: #849094;
-    --ask: #eee;
-    --text: #333;
-    --rgb-text: rgb(51, 51, 51);
-    --selection-bg: #e09692;
-    --selection: #fff;
-    --tooltips: #8fb7b6;
-    --tooltips-text: #fff; 
-
     /* SKILLS PERCENTAGE */
-    --skill-one:30%;
-    --skill-two:35%;
-    --skill-three:35%;
-    --skill-four:85%;
+    --skill-one:65%;
+    --skill-two:05%;
+    --skill-three:13%;
+    --skill-four:20%;
     
     /* FAVE COLORS */
     --color-one:#7eaba6;
     --color-two:#7e99ab;
     --color-three:#ab7e99;
-
-    /* ROUNDING */
-    --round: 10px;
-    --rounded: 3px;
-}
-
-[data-theme="daynight"] {
-    --bg: #373636;
-    --rgb-bg: rgb(55, 54, 54);
-    --blockquote: #222;
-    --content:#4a4949;
-    --posts: #4a4949;
-    --borders: #6a6a6a;
-    --menu: #4a4949;
-    --menu-text: #fff;
-    --ask: #222;
-    --text: #fff;
-    --rgb-text: rgb(255, 255, 255);
 }
 
 .tmblr-iframe { filter:invert(1); -webkit-filter:invert(1); -o-filter:invert(1); -moz-filter:invert(1); -ms-filter:invert(1); }
@@ -145,11 +101,23 @@ h3 { padding:20px 20px 0; margin:0; }
     border-radius:var(--rounded);
 }
 
-.quote {
+.quote, .quote .bc {
     font-family: 'Mate SC', serif;
     font-size:25px;
     line-height:1.3em;}
-.quote .bx { margin:0 10px; vertical-align:top; color:var(--accent)!important; }
+.quote .bc:after, .quote .bc:before {
+    font-family: Boxicons;
+    color:var(--accent)!important;
+    margin:0 10px;
+    vertical-align:top;
+}
+.quote .quote-right:after {
+    content: "\ee86";
+}
+.quote .quote-left:before {
+    content: "\ee85";
+}
+
 .src { text-align:right; }
 
 .tags a { display:inline-block; line-height:2em; margin:5px 2px; padding:2px 6px; background:var(--accent); color:var(--accent-text)!important; border-radius:var(--rounded); }
@@ -195,13 +163,10 @@ h3 { padding:20px 20px 0; margin:0; }
             <a href="/">home</a>
             
             <a href="/about">about</a>
-            
+
             <a href="/nav">navigation</a>
             
-            <!--- here add links like Portfolio?
-            <a href="/">Link 1</a>
-            
-            <a href="/">Link 2</a> -->
+            <a href="/ask">message</a>
             
             <a href="/archive">archive</a>
         </div>
@@ -223,17 +188,14 @@ h3 { padding:20px 20px 0; margin:0; }
         <ul>
         
         <li><a href="/">home</a></li>
-        
+
         <li><a href="/about">about</a></li>
         
         <li><a href="/nav">navigation</a></li>
         
-        <li><a href="/archive">archive</a></li>
+        <li><a href="/ask">message</a></li>
         
-        <!--- here add links like Portfolio? or keep these in Navigation?
-        <a href="/">Link 1</a>
-    
-        <a href="/">Link 2</a> -->
+        <li><a href="/archive">archive</a></li>
         
         </ul>
     </nav>
@@ -242,20 +204,21 @@ h3 { padding:20px 20px 0; margin:0; }
 
 <div class="content flex justify">
 
-    <div class="intromsg giant box">
-        <div class="con">
-            <svg class="bx" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32 32">
-            </svg>
-            <p>Page introduction.</p>
-        </div>
-   </div>
+<div class="intromsg giant box">
+    <div class="con">
+        <svg class="bx" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 32 32">
+        <path></path>
+        </svg>
+        <p>Page header.</p>
+    </div>
+</div>
 
 <!--- 
 
 You can add more boxes by copying and pasting this:
 
 For tags:
-<div class="tags small box">
+<div class="tags medium box">
     <div class="con">
         <h3></h3> (header)
         <a href="URL HERE">Tag</a>
@@ -271,7 +234,7 @@ For links:
 </div>
 
 Details:
-<div class="detail small box">
+<div class="detail medium box">
     <div class="con">
         <p><span class="rounded">Detail Name</span> Detail</p>
         <p><span class="rounded">Detail Name</span> Detail</p>
@@ -288,7 +251,7 @@ About me:
 </div>
 
 Skills bar:
-<div class="stats small box">
+<div class="stats medium box">
     <div class="con">
 
         <p><h3>Skill #1</h3>
@@ -313,7 +276,7 @@ Button:
 </div>
 
 Likes & dislikes:
-<div class="pref small box">
+<div class="pref medium box">
 <div class="con">
     <table>
     <tr>
@@ -342,7 +305,7 @@ FAVORITE COLORS:
 Remember to change the colors where the variables are.
 
 Socials:
-<div class="social small box">
+<div class="social medium box">
 <div class="con">
     <table>
         <tr>
@@ -371,7 +334,7 @@ Quote:
 </div>
 
 Currently:
-<div class="currently small box">
+<div class="currently medium box">
 <div class="con">
     <table>
         <tr>
@@ -398,7 +361,7 @@ Currently:
 </div>
 
 Options:
-box: small, big, giant
+box: medium, big, giant
 con: one, two, three (columns)
 
 --->

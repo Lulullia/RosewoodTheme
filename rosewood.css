@@ -1,3 +1,46 @@
+:root {
+    --body-font: "Space Mono", monospace;
+    --body-size: 13px;
+    --line-hgt: 1.5em;
+    --rgb-accent: rgb(143, 183, 182);
+
+    --accent: #8fb7b6;
+    --accent-text: #fff;
+    --bg: #f0f0f0;
+    --rgb-bg: rgb(240, 240, 240);
+    --blockquote: #eee;
+    --content: #fafafa;
+    --posts: #fafafa;
+    --borders: #dadada;
+    --links: #8fb7b6;
+    --links-hover: #849094;
+    --ask: #eee;
+    --text: #333;
+    --rgb-text: rgb(51, 51, 51);
+    --selection-bg: #e09692;
+    --selection: #fff;
+    --tooltips: #8fb7b6;
+    --tooltips-text: #fff; 
+
+    /* ROUNDING */
+    --round: 10px;
+    --rounded: 3px;
+}
+
+[data-theme="daynight"] {
+    --bg: #373636;
+    --rgb-bg: rgb(55, 54, 54);
+    --blockquote: #222;
+    --content:#4a4949;
+    --posts: #4a4949;
+    --borders: #6a6a6a;
+    --menu: #4a4949;
+    --menu-text: #fff;
+    --ask: #222;
+    --text: #fff;
+    --rgb-text: rgb(255, 255, 255);
+}
+
 .tmblr-iframe {
     z-index: 9999999999999 !important;
     top: 15px !important;
