@@ -1,6 +1,6 @@
 <!-----
 
-                   ★ [ Rose Wood] by ricecodes ★ 
+                   ★ [ Rose Wood ] by Ricecodes ★ 
 Credit:
 
 ★ Icons: https://boxicons.com/
@@ -8,7 +8,7 @@ Credit:
 ★ Day/Night Mode: https://egg.design/post/186889223257/day-night-mode-tutorial-after-featuring-a
 ★ Infinite Scroll: https://infinite-scroll.com/
 ★ Masonry: https://masonry.desandro.com/
-★ NPF Images: https://glenthemes.tumblr.com/post/659034084446748672/npf-images-v3
+★ NPF Photosets: https://annalogs.tumblr.com/photosets
 ★ Tumblr Redirects: https://magnusthemes.tumblr.com/post/162657076440/remove-tumblrs-redirects
 ★ Tippy Tooltip: https://atomiks.github.io/tippyjs/
 
@@ -18,7 +18,6 @@ Credit:
 <html>
 <head>
 
-<meta charset="utf-8">
 <title>{Title}{block:TagPage} — {lang:Posts tagged Tag}{/block:TagPage}{block:SearchPage} — {lang:Search results for SearchQuery}{/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</title>
 
 
@@ -31,30 +30,24 @@ Credit:
 <meta name="if:Use Avatar" content="">
 <meta name="image:Avatar" content="">
 
-<meta name="color:Accent" content="#8fb7b6">
+<meta name="color:Accent" content="#d99d98">
 <meta name="color:Accent Text" content="#ffffff">
-<meta name="color:Links" content="#8fb7b6">
-<meta name="color:Links Hover" content="#849094">
-<meta name="color:Selection Background" content="#e09692">
-<meta name="color:Selection" content="#ffffff">
-<meta name="color:Tooltips" content="#8fb7b6">
-<meta name="color:Tooltips Text" content="#ffffff">
-<meta name="color:Mobile Header" content="#25262b">
-<meta name="color:&#x2740;&#x22B1;&#x2504;&#x2504;&#x2504; Light Theme &#x2504;&#x2504;&#x2504;&#x22B0;&#x2740;" content="#ffffff">
 <meta name="color:Background" content="#f0f0f0">
 <meta name="color:Posts" content="#fafafa">
-<meta name="color:Borders" content="#dadada">
-<meta name="color:Text" content="#333333">
+<meta name="color:Borders" content="#d2d2d2">
+<meta name="color:Text" content="#000000">
 <meta name="color:Question" content="#eeeeee">
-<meta name="color:&#x2740;&#x22B1;&#x2504;&#x2504;&#x2504; Dark Theme &#x2504;&#x2504;&#x2504;&#x22B0;&#x2740;" content="#ffffff">
-<meta name="color:Dark Background" content="#373636">
-<meta name="color:Dark Borders" content="#6a6a6a">
-<meta name="color:Dark Posts" content="#4a4949">
-<meta name="color:Dark Text" content="#ffffff">
-<meta name="color:Dark Question" content="#222222">
-
-<meta name="select:Blog Theme" title="Light Theme" content="light">
-<meta name="select:Blog Theme" title="Dark Theme" content="dark">
+<meta name="color:Links" content="#c48380">
+<meta name="color:Links Hover" content="#87c1af">
+<meta name="color:Selection Background" content="#e09692">
+<meta name="color:Selection" content="#ffffff">
+<meta name="color:Tooltips" content="#000000">
+<meta name="color:Tooltips Text" content="#ffffff">
+<meta name="color:Night Background" content="#15161a">
+<meta name="color:Night Borders" content="#41424d">
+<meta name="color:Night Posts" content="#25262b">
+<meta name="color:Night Text" content="#ffffff">
+<meta name="color:Night Question" content="#15161a">
 
 <meta name="select:Blog Layout" title="Two Columns" content="two">
 <meta name="select:Blog Layout" title="Three Columns" content="three">
@@ -65,7 +58,7 @@ Credit:
 <meta name="select:Updates Icon" title="Error" content="bxs-error">
 <meta name="select:Updates Icon" title="News" content="bxs-news">
 
-<meta name="if:Hide Tumblr Controls" content="">
+<meta name="if:Dark Mode" content="">
 <meta name="if:Round Corners" content="">
 <meta name="if:Hide Text Posts" content="">
 <meta name="if:Hide Quote Posts" content="">
@@ -77,10 +70,7 @@ Credit:
 <meta name="text:Body Font" content="Source Sans Pro">
 <meta name="text:Font Size" content="14px">
 <meta name="text:Line Height" content="1.5em">
-<meta name="text:Photoset Gap" content="4px">
-<meta name="text:&#x2740;&#x22B1;&#x2504;&#x2504;&#x2504; Updates &#x2504;&#x2504;&#x2504;&#x22B0;&#x2740;" content="">
 <meta name="text:Updates" content="The updates tab will automatically be hidden if this is empty.">
-<meta name="text:&#x2740;&#x22B1;&#x2504;&#x2504;&#x2504; Links &#x2504;&#x2504;&#x2504;&#x22B0;&#x2740;" content="">
 <meta name="text:Link 1" content="Link 1">
 <meta name="text:Link 1 URL" content="">
 <meta name="text:Link 2" content="Link 2">
@@ -92,9 +82,8 @@ Credit:
 
 <link href="https://fonts.googleapis.com/css2?family={text:Body Font}:wght@400;700&display=swap" rel="stylesheet">
 <link href="https://static.tumblr.com/0podkko/oDSpg7y88/photosets.css" rel="stylesheet">
+<link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
 <link href="https://lulullia.github.io/RosewoodTheme/rosewood.min.css" rel="stylesheet">
-<link href="//npf-images-v3.github.io/recon.css" rel="stylesheet">
-<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
 <style>
 
@@ -104,22 +93,70 @@ Credit:
     --body-font:{text:Body Font},sans-serif;
     --body-size:{text:Font Size};
     --line-hgt:{text:Line Height};
-    --gap-size:{text:Photoset Gap};
+    --post-size:{select:Post Size};
+    --rgb-accent:{RGBcolor:Accent};
+}
+
+{block:ifNotDarkMode}
+:root {
     --accent:{color:Accent};
     --accent-text:{color:Accent Text};
-    --rgb-accent:{RGBcolor:Accent};
+    --bg:{color:Background};
+    --rgb-bg:{RGBcolor:Background};
+    --blockquote:{color:Question};
+    --borders:{color:Borders};
     --links:{color:Links};
     --links-hover:{color:Links Hover};
-    --mobile:{color:Mobile Header};
+    --posts:{color:Posts};
+    --ask:{color:Question};
+    --text:{color:Text};
+    --rgb-text:{RGBcolor:Text};
     --selection-bg:{color:Selection Background};
     --selection:{color:Selection};
     --tooltips:{color:Tooltips};
     --tooltips-text:{color:Tooltips Text};
-    --NPF-Caption-Spacing:1em;
-    --NPF-Image-Spacing:{text:Photoset Gap};
 }
 
-body.light, [data-theme="daynight"] body.dark {
+[data-theme="daynight"] {
+    --bg:{color:Night Background};
+    --rgb-bg:{RGBcolor:Night Background};
+    --blockquote:{color:Night Background};
+    --borders:{color:Night Borders};
+    --menu:{color:Night Posts};
+    --menu-text:{color:Night Text};
+    --posts:{color:Night Posts};
+    --ask:{color:Night Question};
+    --text:{color:Night Text};
+    --rgb-text:{RGBcolor:Night Text};
+    --tooltips:{color:Accent};
+    --tooltips-text:{color:Accent Text};
+}
+
+.tmblr-iframe { filter:invert(1); -webkit-filter:invert(1); -o-filter:invert(1); -moz-filter:invert(1); -ms-filter:invert(1); }
+[data-theme="daynight"] .tmblr-iframe { filter:invert(0); -webkit-filter:invert(0); -o-filter:invert(0); -moz-filter:invert(0); -ms-filter:invert(0); }
+{/block:ifNotDarkMode}
+
+{block:ifDarkMode}
+:root {
+    --accent:{color:Accent};
+    --accent-text:{color:Accent Text};
+    --bg:{color:Night Background};
+    --rgb-bg:{RGBcolor:Night Background};
+    --blockquote:{color:Night Background};
+    --borders:{color:Night Borders};
+    --links:{color:Links};
+    --links-hover:{color:Links Hover};
+    --posts:{color:Night Posts};
+    --ask:{color:Night Question};
+    --text:{color:Night Text};
+    --rgb-text:{RGBcolor:Night Text};
+    --selection-bg:{color:Selection Background};
+    --selection:{color:Selection};
+    --tooltips:{color:Accent};
+    --tooltips-text:{color:Accent Text};
+}
+
+[data-theme="daynight"] {
     --bg:{color:Background};
     --rgb-bg:{RGBcolor:Background};
     --blockquote:{color:Question};
@@ -128,37 +165,22 @@ body.light, [data-theme="daynight"] body.dark {
     --ask:{color:Question};
     --text:{color:Text};
     --rgb-text:{RGBcolor:Text};
+    --tooltips:{color:Tooltips};
+    --tooltips-text:{color:Tooltips Text};
 }
 
-[data-theme="daynight"] body.light, body.dark {
-    --bg:{color:Dark Background};
-    --rgb-bg:{RGBcolor:Dark Background};
-    --blockquote:{color:Dark Background};
-    --borders:{color:Dark Borders};
-    --posts:{color:Dark Posts};
-    --ask:{color:Dark Question};
-    --text:{color:Dark Text};
-    --rgb-text:{RGBcolor:Dark Text};
-}
+.tmblr-iframe { filter:invert(0); -webkit-filter:invert(0); -o-filter:invert(0); -moz-filter:invert(0); -ms-filter:invert(0); }
+[data-theme="daynight"] .tmblr-iframe { filter:invert(1); -webkit-filter:invert(1); -o-filter:invert(1); -moz-filter:invert(1); -ms-filter:invert(1); }
+{/block:ifDarkMode}
 
 {block:ifRoundCorners}
-.round, .npf-link-block.no-poster { border-radius:10px; }
+.round { border-radius:10px; }
 .rounder { border-radius:3px; }
 {/block:ifRoundCorners}
 
-{block:ifHideTumblrControls}
-.tmblr-iframe { opacity:0; visibility:hidden; }
-{/block:ifHideTumblrControls}
-
-{block:ifNotHideTumblrControls}
-.t-ctrls { display:none; }
-.tmblr-iframe { opacity:1!important; visibility:visible!important; top:15px!important; right:0!important; }
-{/block:ifNotHideTumblrControls}
-
-
 {block:PermalinkPage}
 .sidebar { margin:0 0 0 -2vw; }
-.container { width:75vw; }
+.container { width:75vw; margin:100px auto; }
 .content { margin:100px 0 100px 14vw; width:75%; }
 article { margin:0 0 3em 0; width:100%; }
 
@@ -189,6 +211,26 @@ article, article.layout-three{margin:0 0 3em 0; width:100%;}
 }
 {/block:PermalinkPage}
 
+.pagination { display:flex; justify-content:space-between; margin:60px 0; width:100%; }
+.jump { max-width:90%; }
+.pagination a, .pagination span, .current {
+    display:inline-block;
+    padding:7px;
+    background:var(--accent);
+    color:#fff;
+    border-radius:5px;
+    overflow:hidden;
+    -webkit-transition:all 0.4s ease;
+    -moz-transition:all 0.4s ease; 
+    -o-transition:all 0.4s ease; 
+    -ms-transition:all 0.4s ease; 
+    transition:all 0.4s ease;
+    }
+.jump a, .current { margin:0 7px; }
+.current { background:transparent; color:var(--text); }
+.prev a, .next a { position:absolute; margin:0; z-index:99999; }
+.pagination span { background:transparent; color:var(--text); }
+.pagination a:hover { background:var(--links-hover); color:#fff; }
 
 
 /* Icons are hard-coded into the CSS.
@@ -199,18 +241,18 @@ Search for the wanted icon's name, and copy its code. */
 </style>
 </head>
 
-<body class="{select:Blog Theme}">
+<body>
 
 <div class="tab"> <!--- TAB START --->
     <label class="dn"><input class="modus" type="checkbox">
-        <div class="diem">
-            <a class="diemnox moon" title="Enable Dark Mode"><i class="bx bxs-moon"></i></a>
-            <a class="diemnox none" title="Disable Dark Mode"><i class="bx bxs-sun"></i></a>
-        </div>
-        <div class="nox">
-            <a class="diemnox moon" title="Enable Light Mode"><i class="bx bxs-sun"></i></a>
-            <a class="diemnox none" title="Disable Light Mode"><i class="bx bxs-moon"></i></a>
-        </div>
+        {block:ifNotDarkMode}
+            <a class="diemnox moon" title="Night"><i class="bx bxs-moon"></i></a>
+            <a class="diemnox none" title="Day"><i class="bx bxs-sun"></i></a>
+        {/block:ifNotDarkMode}
+        {block:ifDarkMode}
+            <a class="diemnox moon" title="Day"><i class="bx bxs-sun"></i></a>
+            <a class="diemnox none" title="Night"><i class="bx bxs-moon"></i></a>
+        {/block:ifDarkMode}
     </label>
     
     <!--- START OF MOBILE NAVIGATION --->
@@ -815,7 +857,7 @@ Search for the wanted icon's name, and copy its code. */
 </div> <!--- GRID --->
 
 {block:Pagination}
-<div class="pgs flex justify">
+<div class="pagination">
 <div class="prev">{block:PreviousPage}<a href="{PreviousPage}">Previous</a>{/block:PreviousPage}<span>Previous</span></div>
 <div class="jump">{block:JumpPagination length="5"}{block:CurrentPage}<div class="current">{PageNumber}</div>{/block:CurrentPage}{block:JumpPage}<a href="{URL}">{PageNumber}</a>{/block:JumpPage}{/block:JumpPagination}</div>
 <div class="next">{block:NextPage}<a href="{NextPage}">Next</a>{/block:NextPage}<span>Next</span></div>
@@ -838,11 +880,8 @@ Search for the wanted icon's name, and copy its code. */
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/gh/annasthms/customaudio@latest/customaudio.min.js"></script>
-<script src="https://static.tumblr.com/05ejowb/X4Yrp9q3s/rosewood.min.js"></script>
 <script src="https://static.tumblr.com/05ejowb/cxAqpcpux/load.min.js"></script>
 <script type="text/javascript" src="https://static.tumblr.com/i5s2zks/9Acok8oo2/bct-timeago.min.js"></script>
-<!-- NPF images fix v3.0 by @glenthemes [2021] - git.io/JRBt7 --->
-<script src="//npf-images-v3.github.io/script.js"></script>
 
 <script>
 $(document).ready(function(){
@@ -872,7 +911,11 @@ $(document).ready(function(){
             $(this).text(n + 'k notes');
         }
     });
+    
+    
 });
 </script>
+<script src="https://static.tumblr.com/05ejowb/59hr5s287/rosewood.min.js"></script>
+    
 </body>
 </html>
