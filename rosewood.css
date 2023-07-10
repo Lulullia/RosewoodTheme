@@ -433,7 +433,6 @@ a.read_more,
     display: block;
     margin: 0 0 10px;
     font-size: 18px;
-    vertical-align: middle;
     text-align: center;
     padding: 10px;
     background: var(--accent);
